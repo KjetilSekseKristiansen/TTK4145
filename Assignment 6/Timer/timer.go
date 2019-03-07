@@ -9,12 +9,12 @@ type timerstruct struct{
   runtime int64
 }
 
-func init(time_ms int64, t* timerstruct){
-  w.start = time.Now().UnixNano() / int64(time.Millisecond)
-	w.runtime = time_ms
+func init_timer(time_ms int64, t* timerstruct){
+  t.start = time.Now().UnixNano() / int64(time.Millisecond)
+	t.runtime = time_ms
 }
 func reset(t* timerstruct){
-  t.start = time.Now().unixNano() / int64(time.Millisecond)
+  t.start = time.Now().UnixNano() / int64(time.Millisecond)
 }
 func timeout(t* timerstruct) bool {
   if((t.start + t.runtime) < (time.Now().UnixNano() / int64(time.Millisecond))){

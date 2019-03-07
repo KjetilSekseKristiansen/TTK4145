@@ -1,8 +1,8 @@
 package main
 
 import (
-	"./network/bcast"
-	"./network/localip"
+	"./network/network/bcast"
+	"./network/network/localip"
 	"flag"
 	"fmt"
 	"os"
@@ -24,7 +24,7 @@ func spawnBackup(){
 func main(){
 	count := 0
 	timer := timer.timerstruct{}
-	timer.init(3000, &timer)
+	timer.init_timer(3000, &timer)
 
 	timeout := make(chan bool)
 	Rx := make(chan BackupInfo)
